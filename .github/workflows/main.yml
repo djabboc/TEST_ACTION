@@ -1,8 +1,10 @@
 name: TEST Actions Demo
 run-name: TEST Title
 on: [push]
+env:
+  TEST_ENV_STRING: 你好世界
 jobs:
   TEST_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "使用秘密环境变量：${{ secrets.TEST_STRING }}"
+      - run: echo "使用环境变量：$TEST_ENV_STRING"
